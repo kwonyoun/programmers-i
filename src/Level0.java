@@ -77,11 +77,21 @@ public class Level0 {
 //        System.out.println(a);
 
         //음양 더하기
-        int[] z = {4,7,12};
-        boolean[] zz = {true,false,true};
-        int a = solution13(z,zz);
-        System.out.println(a);
+//        int[] z = {4,7,12};
+//        boolean[] zz = {true,false,true};
+//        int a = solution13(z,zz);
+//        System.out.println(a);
 
+        //없는 숫자 더하기
+        int[] a = {1,2,3,4,6,7,8,0};
+        System.out.println(solution14(a));
+
+    }
+
+    //없는 숫자 더하기
+    public int solution14(int[] numbers) {
+        int answer = -1;
+        return answer;
     }
 
     //음양 더하기
