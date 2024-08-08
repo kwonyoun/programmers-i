@@ -266,20 +266,609 @@ public class Level0 {
 //        solution48(price);
 
         //최댓값과 최솟값
-        String s = "-1 -2 -3 -4";
-        solution49(s);
+//        String s = "-1 -2 -3 -4";
+//        solution49(s);
 
         //아이스 아메리카노
-        int m = 15000;
-        solution50(m);
+//        int m = 15000;
+//        solution50(m);
 
         //배열 자르기
-        int[] nums = {1, 2, 3, 4, 5};
-        int n = 1;
-        int nn = 3;
-        solution51(nums, n, nn);
+//        int[] nums = {1, 2, 3, 4, 5};
+//        int n = 1;
+//        int nn = 3;
+//        solution51(nums, n, nn);
+
+        //순서쌍의 개수
+//        int n = 36;
+//        solution52(n);
+
+        //개미 군단
+//        int hp = 24;
+//        solution53(hp);
+
+        //모음 제거
+//        String s = "nice to meet you";
+//        solution54(s);
+//
+        //숨어있는 숫자의 덧셈 (1)
+//        String s = "aAb1B2cC34oOp";
+//        solution55(s);
+
+        //암호 해독
+//        String s = "dfjardstddetckdaccccdegk";
+//        int c = 4;
+//        System.out.println(solution56(s, c));
+
+        //가장 큰 수 찾기
+//        int[] a = {1,8,3};
+//        solution57(a);
+
+        //n의 배수 고르기
+//        int n = 12;
+//        int[] li = {2, 100, 120, 600, 12, 12};
+//        solution58(n, li);
+
+        //rny_string
+//        String s = "mmmmmmmm";
+//        solution59(s);
+
+        //공백으로 구분하기2
+//        String s = "i    love  you";
+//        solution60(s);
+
+        //공백으로 구분하기1
+//        String s = "i love you";
+//        solution61(s);
+
+        //원하는 문자열 찾기
+//        String s = "AbCdEfG";
+//        String b = "aBc";
+//        solution62(s,b);
+
+        //길이에 따른 연산
+//        int[] li = {3, 4, 5};
+//        solution63(li);
+
+        //조건에 맞게 수열 변환하기 1
+//        int[] arr = {1, 2, 3, 100, 99, 98};
+//        solution64(arr);
+
+        //n보다 커질 때까지 더하기
+//        int[] nu = {34, 5, 71, 29, 100, 34};
+//        int n = 123;
+//        solution65(nu, n);
+
+        //5명씩
+//        String[] s = {"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
+//        solution66(s);
+
+        //n개 간격의 원소들
+//        int[] list = {4, 2, 6, 1, 7, 6};
+//        int n = 4;
+//        solution67(list, n);
+
+        //특정한 문자를 대문자로 바꾸기
+//        String s = "lowercase";
+//        String a = "c";
+//        solution68(s, a);
+
+        //n 번째 원소까지
+//        int[] list = {5, 2, 1, 7, 5};
+//        int n = 3;
+//        solution69(list, n);
+
+        //순서 바꾸기
+//        int[] list = {5, 2, 1, 7, 5};
+//        int n = 3;
+//        solution70(list, n);
+
+        //n 번째 원소부터
+//        int[] list ={5, 2, 1, 7, 5};
+//        int n = 2;
+//        solution71(list,n);
+
+        //첫 번째로 나오는 음수
+//        int[] li = {2, 4, 15, 46, 38, -2, 15};
+//        solution72(li);
+
+        //카운트 다운
+//        int s = 10;
+//        int e = 3;
+//        solution73(s, e);
+
+        //배열 만들기1
+//        int s = 20;
+//        int e = 3;
+//        solution74(s, e);
 
 
+        //접두사인지 확인하기
+//        String m = "banana";
+//        String p = "ban";
+//        solution75(m,p);
+
+        //문자열의 앞의 n글자
+//        String m ="ProgrammerS123";
+//        int p = 11;
+//        solution76(m,p);
+
+
+        //접미사인지 확인하기
+//        String m = "banana";
+//        String p = "ban";
+//        solution77(m,p);
+
+        //문자열의 뒤의 n글자
+//        String m ="ProgrammerS123";
+//        int p = 11;
+//        solution78(m,p);
+
+        //부분 문자열 이어 붙여 문자열 만들기
+//        String[] m = {"progressive", "hamburger", "hammer", "ahocorasick"};
+//        int[][] p = {{0, 4}, {1, 2}, {3, 5}, {7, 7}};
+//        solution79(m,p);
+
+        //글자 이어 붙여 문자열 만들기
+        String m = "cvsgiorszzzmrpaqpe";
+        int[] p = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
+        solution80(m,p);
+
+
+    }
+
+    //글자 이어 붙여 문자열 만들기
+    public String solution80(String my_string, int[] index_list) {
+        String answer = "";
+
+        StringBuilder sb = new StringBuilder();
+        char[] s = my_string.toCharArray();
+        for (int i : index_list) {
+            sb.append(s[i]);
+        }
+        answer = sb.toString();
+//        System.out.println(answer);
+        return answer;
+    }
+
+    //부분 문자열 이어 붙여 문자열 만들기
+    public String solution79(String[] my_strings, int[][] parts) {
+        String answer = "";
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < my_strings.length; i++) {
+            answer = my_strings[i].substring(parts[i][0], parts[i][1]+1);
+            sb.append(answer);
+        }
+        answer = sb.toString();
+        System.out.println(answer);
+        return answer;
+    }
+
+    //문자열의 뒤의 n글자
+    public String solution78(String my_string, int n) {
+        String answer = "";
+
+        answer = my_string.substring(my_string.length() -n);
+        System.out.println(answer);
+
+//        char[] m = my_string.toCharArray();
+//        StringBuilder sb = new StringBuilder();
+//        StringBuilder sb2 = new StringBuilder();
+//        sb.append(m);
+//        sb.reverse();
+//        answer = sb.substring(0, n);
+//        sb2.append(answer);
+//        sb2.reverse();
+//        answer = sb2.toString();
+
+        return answer;
+    }
+
+    //접미사인지 확인하기
+    public int solution77(String my_string, String is_suffix) {
+        int answer = 0;
+
+        String a = "";
+        for (int i = 0; i < my_string.length(); i++) {
+            a = my_string.substring(i);
+            if (is_suffix.equals(a)){
+                answer =  1;
+            }
+            System.out.println(a);
+        }
+        return answer;
+    }
+
+    //문자열의 앞의 n글자
+    public String solution76(String my_string, int n) {
+        String answer = "";
+
+        answer = my_string.substring(0, n);
+        System.out.println(answer);
+        return answer;
+    }
+
+    //접두사인지 확인하기
+    public int solution75(String my_string, String is_prefix) {
+        int answer = 0;
+
+        String a = "";
+        for (int i = 0; i < my_string.length(); i++) {
+            a = my_string.substring(0, i+1);
+            System.out.println(a);
+            if (is_prefix.equals(a)){
+                answer = 1;
+            }
+        }
+        return answer;
+    }
+
+    //배열 만들기1
+    public int[] solution74(int n, int k) {
+        int[] answer = {};
+
+        answer = new int[n/k];
+        int index = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % k == 0){
+                answer[index] = i;
+                System.out.println(answer[index]);
+                index++;
+            }
+        }
+        return answer;
+    }
+
+    //카운트 다운
+
+    public int[] solution73(int start_num, int end_num) {
+        int[] answer = {};
+
+        answer = new int[start_num-end_num+1];
+        int index = 0;
+        for (int i = start_num; i >= end_num; i--) {
+            answer[index] = i;
+            index++;
+        }
+        return answer;
+    }
+
+
+    //첫 번째로 나오는 음수
+    public int solution72(int[] num_list) {
+        int answer = 0;
+
+        for (int i = 0; i < num_list.length; i++) {
+            if (num_list[i] < 0){
+                answer = i;
+                break;
+            } else {
+                answer = -1;
+            }
+        }
+        System.out.println(answer);
+        return answer;
+    }
+
+    //n 번째 원소부터
+    public int[] solution71(int[] num_list, int n) {
+        int[] answer = {};
+        answer = new int[num_list.length - n +1];
+
+        int idx = 0;
+        for (int i = n -1 ; i < num_list.length; i++) {
+            answer[idx] = num_list[i];
+            System.out.println(answer[idx]);
+            idx++;
+
+        }
+        return answer;
+    }
+
+    //순서 바꾸기
+    //나중에 다시 풀어보기
+    public int[] solution70(int[] num_list, int n) {
+        int[] answer = {};
+        answer = new int[num_list.length];
+
+        int id = 0;
+        for (int i = n; i < num_list.length; i++) {
+            answer[id] = num_list[i]; //n 뒤에 있는 배열 숫자들이 저장.
+            System.out.println(answer[id]);
+            id++;
+        }
+        for (int i = 0; i < n; i++) {
+            answer[id] = num_list[i]; //
+            System.out.println(answer[id]);
+            id++;
+        }
+        return answer;
+    }
+
+    //n 번째 원소까지
+    public int[] solution69(int[] num_list, int n) {
+        int[] answer = {};
+
+        answer = new int[n];
+        for (int i = 0; i < n; i++) {
+            answer[i] = num_list[i];
+            System.out.println(answer[i]);
+        }
+        return answer;
+    }
+
+    //특정한 문자를 대문자로 바꾸기
+    public String solution68(String my_string, String alp) {
+        String answer = "";
+
+        if (my_string.contains(alp)){
+            answer = my_string.replace(alp, alp.toUpperCase() );
+        } else {
+            answer = my_string;
+        }
+
+        System.out.println(answer);
+        return answer;
+    }
+
+    //n개 간격의 원소들
+    public int[] solution67(int[] num_list, int n) {
+        int[] answer = {};
+
+        if (num_list.length % n == 0 ){
+            answer = new int[num_list.length / n];
+        } else {
+            answer = new int[num_list.length/n + 1];
+        }
+        int in = 0;
+        for (int i = 0; i < num_list.length; i=i+n) {
+            answer[in] = num_list[i];
+            System.out.println(answer[in]);
+            in++;
+        }
+        return answer;
+    }
+
+    //5명씩
+    //다시풀기
+    public String[] solution66(String[] names) {
+        String[] answer = {};
+
+        if (names.length % 5 == 0){
+            answer = new String[names.length/5];
+        } else {
+            answer = new String[names.length/5 + 1];
+        }
+
+        int index = 0;
+        for (int i = 0; i < names.length; i=i+5) {
+            answer[index] = names[i];
+            System.out.println(answer[index]);
+            index++;
+        }
+
+
+        return answer;
+    }
+
+    //n보다 커질 때까지 더하기
+    public int solution65(int[] numbers, int n) {
+        int answer = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            answer += numbers[i];
+            if (answer > n){
+                break;
+            }
+        }
+        System.out.println(answer);
+        return answer;
+    }
+
+    //조건에 맞게 수열 변환하기 1
+    public int[] solution64(int[] arr) {
+        int[] answer = {};
+
+//        int z = 0;
+        answer= new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]>=50 && arr[i]%2 ==0){
+                answer[i] = arr[i]/2;
+            } else if (arr[i]<50 && arr[i]%2 ==1){
+                answer[i] = arr[i]*2;
+            } else {
+                answer[i] = arr[i];
+            }
+            System.out.println(answer[i]);
+        }
+
+        return answer;
+    }
+
+    //길이에 따른 연산
+    public int solution63(int[] num_list) {
+        int answer = 0;
+
+        int a = 1;
+        if (num_list.length >= 11){
+            for (int i: num_list){
+                answer += i;
+            }
+        } else {
+            for (int i : num_list) {
+                a *= i;
+            }
+            answer = a;
+        }
+        System.out.println(answer);
+
+        return answer;
+    }
+
+    //원하는 문자열 찾기
+    public int solution62(String myString, String pat) {
+        int answer = 0;
+
+        myString = myString.toLowerCase();
+        pat = pat.toLowerCase();
+        System.out.println(myString);
+        if (myString.contains(pat)){
+            answer = 1;
+        }
+        return answer;
+    }
+
+    //공백으로 구분하기1
+    public String[] solution61(String my_string) {
+        String[] answer = {};
+
+        answer = my_string.split(" ");
+        return answer;
+    }
+
+    //공백으로 구분하기2
+    public String[] solution60(String my_string) {
+        String[] answer = {};
+
+        answer = my_string.trim().split("\\s+");
+        return answer;
+    }
+
+    //rny_string
+    public String solution59(String rny_string) {
+        String answer = "";
+        if (rny_string.contains("m")){
+            answer = rny_string.replace("m", "rn");
+        } else {
+            answer = rny_string;
+        }
+        System.out.println(answer);
+        return answer;
+    }
+
+    //n의 배수 고르기
+    public int[] solution58(int n, int[] numlist) {
+        int[] answer = {};
+
+        int cnt = 0;
+        for (int i=0; i<numlist.length; i++){
+            if (numlist[i] % n == 0){
+                cnt++; //answer 배열이 길이 설정.
+            }
+        }
+        answer = new int[cnt]; //배열의 길이 설정.
+        int ii = 0;
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i] % n == 0){
+                answer[ii] = numlist[i];
+                ii++;
+
+            }
+        }
+        return answer;
+    }
+
+    //가장 큰 수 찾기
+    public int[] solution57(int[] array) {
+        int[] answer = {};
+
+        answer = new int[2];
+        int max = 0;
+        int arr = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max){
+                max = array[i];
+                arr = i;
+            }
+        }
+        answer[0] = max;
+        answer[1]= arr;
+        return answer;
+    }
+
+    //암호 해독
+    public String solution56(String cipher, int code) {
+        String answer = "";
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = code-1; i < cipher.length(); i=i+code) {
+            char c = cipher.charAt(i);
+            sb.append(c);
+        }
+        answer = sb.toString();
+
+
+//        StringBuilder sb = new StringBuilder();
+//        char[] c = cipher.toCharArray(); //암호 배열
+//        int a = 0;
+//        while (a < cipher.length()){
+//            sb.append(c[code + a - 1]);
+//            a += code;
+//        }
+//        answer = sb.toString();
+        return answer;
+    }
+
+    //숨어있는 숫자의 덧셈 (1)
+    public int solution55(String my_string) {
+        int answer = 0;
+
+        String n = "123456789";
+        char[] c = n.toCharArray();
+        String[] s = my_string.split("");
+        for (char cc:c){
+            for (String ss:s){
+                if (ss.contains(String.valueOf(cc))){
+                    answer += Integer.parseInt(ss);
+                }
+            }
+        }
+        return answer;
+    }
+
+    //모음 제거
+    public String solution54(String my_string) {
+        String answer = "";
+
+        String s = "aeiou";
+        char[] c = s.toCharArray();
+        for (char cc : c){
+            if (my_string.contains(String.valueOf(cc))){
+                my_string = my_string.replace(String.valueOf(cc), "");
+            }
+        }
+        answer = my_string;
+        System.out.println(answer);
+        return answer;
+    }
+
+    //개미 군단
+    public int solution53(int hp) {
+        int answer = 0;
+
+        answer = hp/5;
+        hp = hp%5;
+        answer += hp/3;
+        hp = hp%3;
+        answer += hp/1;
+        hp = hp %1;
+        answer += hp;
+
+        return answer;
+    }
+
+    //순서쌍의 개수
+    public int solution52(int n) {
+        int answer = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (n%i ==0 ){
+                answer++;
+                System.out.println(i);
+            }
+        }
+        return answer;
     }
 
     //배열 자르기
@@ -288,7 +877,8 @@ public class Level0 {
 
         answer = new int[num2 - num1 +1];
         for (int i = 0; i < answer.length; i++) {
-
+            answer[i] = numbers[i+num1];
+            System.out.println(answer[i]);
         }
         return answer;
     }
