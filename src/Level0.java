@@ -415,30 +415,76 @@ public class Level0 {
 //        solution80(m,p);
 
         //과일 장수
-        int m = 4;
-        int n = 3;
-        int[] p = {4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2};
-        solution81(m, n,p);
+//        int k = 3;
+//        int m = 4;
+//        int[] p = {1, 2, 3, 1, 2, 3, 1};
+//        solution81(k, m,p);
+
+        //명예의 전당
+        int k  =3;
+        int[] s = {0, 100, 20, 150, 1, 100, 200};
+        solution82(k, s);
 
 
     }
 
+    //명예의 전당
+    public int[] solution82(int k, int[] score) {
+        int[] answer = {};
+
+
+        return answer;
+    }
+
     //과일 장수
-    
     //못품 -.. 다시 풀기!!!
     public int solution81(int k, int m, int[] score) {
         int answer = 0;
+        
+        Arrays.sort(score);
+        int repeat = score.length / m; //생성되는 배열의 수
+        int rest = score.length % m; //배열 생성 후 생기는 나머지 숫자들의 갯수
 
-        int[][] a = new int[score.length/ m][m];
-
-        int index = 0;
-        for (int i = 0; i < score.length/m; i++) {
-            for (int j = 0; j < m; j++) {
-                a[i][m] = score[i];
-                System.out.println(score[i]);
-//                index++;
+        // m개로 안 나뉘는 경우
+        if(score.length % m != 0) {
+            for(int i = 0; i < repeat; i++) {
+                answer += m*score[(i*m) + rest];
+                //1, 2, 3, 1, 2, 3, 1
+                // 1 1 1 2 2 3 3
+                //answer = answer + m*score[(i*m) + rest] = 0+ 4*score[(0*4) + 3] = 0 + 8 = 8
+                //answer = 8 + 4*score[(1*4) + 3] = 8+
             }
         }
+        // m개로 나뉘는 경우
+        else {
+            for(int i = 0; i < repeat; i++) {
+                System.out.println(score[i]);
+                answer += m*score[i*m];
+                //1 1 2 2 2 2 4 4 4 4 4 4
+                //answer = answer + m*score[i*m] =  0 + 3*score[0] = 3
+                //answer = 12 + m*score[1*m] = 3 + 3*score[1*3] = 3 + 6 = 9
+                //anwer = 9 + 3*socre[2*3] = 9 + 12 = 21
+                //answer = 21 + 3*score[3*3] = 21 + 12 = 33
+
+            }
+        }
+        System.out.println(answer);
+
+
+//        int[][] a = new int[score.length/ m][m];
+//        int index = 0;
+//        for (int i = 0; i < score.length / m ; i++) {
+//            for (int j = 0; j < m; j++) {
+//                a[i][j] = score[index];
+//                index++;
+//            }
+
+//        }
+
+//        for (int i = score.length; i >=m ; i = i-m) {
+//            answer = answer + score[i - m] * m ;
+//            System.out.println(answer);
+//        }
 
 
 //        Arrays.sort(score);
