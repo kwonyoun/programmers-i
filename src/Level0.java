@@ -410,11 +410,46 @@ public class Level0 {
 //        solution79(m,p);
 
         //글자 이어 붙여 문자열 만들기
-        String m = "cvsgiorszzzmrpaqpe";
-        int[] p = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
-        solution80(m,p);
+//        String m = "cvsgiorszzzmrpaqpe";
+//        int[] p = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
+//        solution80(m,p);
+
+        //과일 장수
+        int m = 4;
+        int n = 3;
+        int[] p = {4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2};
+        solution81(m, n,p);
 
 
+    }
+
+    //과일 장수
+    
+    //못품 -.. 다시 풀기!!!
+    public int solution81(int k, int m, int[] score) {
+        int answer = 0;
+
+        int[][] a = new int[score.length/ m][m];
+
+        int index = 0;
+        for (int i = 0; i < score.length/m; i++) {
+            for (int j = 0; j < m; j++) {
+                a[i][m] = score[i];
+                System.out.println(score[i]);
+//                index++;
+            }
+        }
+
+
+//        Arrays.sort(score);
+//
+//        for (int i = 0; i < score.length/m; i++) {
+//            if (i % m == 0){
+//                a[i][m] = score[i];
+//            }
+//            System.out.println(a[i][m]);
+//        }
+        return answer;
     }
 
     //글자 이어 붙여 문자열 만들기
