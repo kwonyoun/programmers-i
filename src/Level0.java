@@ -421,18 +421,101 @@ public class Level0 {
 //        solution81(k, m,p);
 
         //명예의 전당
-        int k  =3;
-        int[] s = {0, 100, 20, 150, 1, 100, 200};
-        solution82(k, s);
+//        int k  =3;
+//        int[] s = {0, 100, 20, 150, 1, 100, 200};
+//        solution82(k, s);
 
+        //수 조작하기1
+//        int n = 0;
+//        String c ="wsdawsdassw";
+//        solution83(n,c);
+
+        //마지막 두 원소
+        int[] li = {1,3,5,2,1};
+        solution84(li);
 
     }
 
-    //명예의 전당
-    public int[] solution82(int k, int[] score) {
+    //마지막 두 원소
+    public int[] solution84(int[] num_list) {
         int[] answer = {};
 
+        answer = new int[num_list.length +1];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = num_list[i];
+            answer[answer.length-1] = 9;
+//            if (num_list[num_list.length - 1] > num_list[num_list.length - 2] ){
+//                answer[i+1] = num_list[num_list.length - 1] * 2;
+//            } else {
+//                answer[i+1] =  (num_list[num_list.length - 2] - num_list[num_list.length - 1]);
+//            }
+            System.out.println(answer[i]);
 
+        }
+
+
+
+        return answer;
+    }
+
+    //수 조작하기1
+    public int solution83(int n, String control) {
+        int answer = 0;
+
+        char[] ca = control.toCharArray();
+        for (char a : ca){
+            if (a == 'w') {
+                n += 1;
+            } else if (a == 's') {
+                n -= 1;
+            } else if ( a == 'd') {
+                n += 10;
+            } else if (a == 'a') {
+                n -= 10;
+            }
+        }
+        answer = n;
+        System.out.println(answer);
+        return answer;
+    }
+
+    //명예의 전당
+    
+    // 다시 풀어보기
+    public int[] solution82(int k, int[] score) {
+        int[] answer = {};
+        answer = new int[score.length];
+
+        int[] sorted    =  new int[score.length];   // 정렬된 값을 넣을 int 배열 공간
+
+        for(int i = 0; i < score.length; i++){
+            int value = score[i];   // 현재 값
+            // System.out.println(value);
+
+            // Step. 등록된 값 정렬
+            for(int j = 0; j <= i; j++){
+                // Step. 등록된 값이 현재 값보다 작으면, 뒤로 미루기
+                if(sorted[j] == 0 || sorted[j] < value){
+                    int temp = sorted[j];
+                    sorted[j] = value;
+                    value = temp;
+                }
+            }
+            // Step. 명예의 전당 개수가 저장된 개수보다 작은 경우 저장된 이원 마지막 번호로 저장
+            if(i < k){
+                answer[i] = sorted[i];
+                System.out.println(answer[i]);
+                // Step. 명예의 전당 개수가 저장된 개수보다 많은 경우 명의 정당 인원 마지막 번호로 저장
+            }else{
+                answer[i] = sorted[k-1];
+                System.out.println(answer[i]);
+            }
+
+            /*
+            for(int s:sorted)   System.out.print(s + " ");
+            System.out.println();
+            */
+        }
         return answer;
     }
 
