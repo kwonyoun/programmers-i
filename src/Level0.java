@@ -431,27 +431,230 @@ public class Level0 {
 //        solution83(n,c);
 
         //마지막 두 원소
-        int[] li = {1,3,5,2,1};
-        solution84(li);
+//        int[] li = {1,3,5,2,1};
+//        solution84(li);
 
+        //이어 붙인 수
+//        int[] li  = {5, 7, 8, 3};
+//        solution85(li);
+
+        //원소들의 곱과 합
+//        int[] li = {5, 7, 8, 3};
+//        solution86(li);
+
+        //홀짝에 따라 다른 값 반환하기
+//        int li = 10;
+//        solution87(li);
+
+        //두 수의 연산값 비교하기
+//        int a = 91;
+//        int b = 2;
+//        solution88(a, b);
+
+        //더 크게 합치기
+//        int a = 89;
+//        int b = 8;
+//        solution89(a, b);
+
+        //문자열 곱하기
+//        String s = "love";
+//        int k = 10;
+//        solution90(s, k);
+
+        //문자 리스트를 문자열로 변환하기
+//        String[] s = {"a","b","c"};
+//        solution91(s);
+
+        //안전지대
+//        int[][] a = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 1}};
+//        solution92(a);
+
+        //잘라서 배열로 저장하기
+        String a = "abc1Addfggg4556b";
+        int b = 6;
+        solution93(a,b);
+    }
+
+    //잘라서 배열로 저장하기
+    public String[] solution93(String my_str, int n) {
+        String[] answer = {};
+
+        String sa = "";
+        if (my_str.length() % n == 0) {
+            answer = new String[my_str.length()/n];
+        } else {
+            answer = new String[my_str.length()/n +1];
+        }
+        for (int i = 0; i < my_str.length(); i=i+n) {
+            sa = my_str.substring(i, n);
+            n = n+n;
+            if (my_str.length() < n){
+                sa = my_str.substring(i);
+            }
+            answer[i] = sa;
+//            System.out.println(answer[i]);
+        }
+        String z = my_str.substring(7);
+
+        System.out.println(z);
+        return answer;
+    }
+
+    //안전지대
+    public int solution92(int[][] board) {
+        int answer = 0;
+
+
+        int all = 0;
+        int cnt = 0;
+        int first = 0;
+        int end = 0;
+        for (int i = 0; i < board.length; i++) {
+//            System.out.println("i "+i);
+            for (int j = 0; j < board[i].length; j++) {
+                all++;
+//                System.out.println("j "+j);
+                if (board[i][j] == 1) {
+//                    System.out.println(i+" "+j);
+                    cnt++;
+                    System.out.println(cnt);
+                    if (board[i][0] ==1 || board[i][board[i].length] == 1){
+
+                    }
+
+                }
+
+            }
+        }
+        answer = all - cnt;
+        return answer;
+    }
+
+    //문자 리스트를 문자열로 변환하기
+    public String solution91(String[] arr) {
+        String answer = "";
+
+        for (String a:arr){
+            answer += a;
+        }
+        return answer;
+    }
+
+    //문자열 곱하기
+    public String solution90(String my_string, int k) {
+        String answer = "";
+
+        for (int i = 1; i <= k; i++) {
+            answer += my_string;
+        }
+        System.out.println(answer);
+        return answer;
+    }
+
+    //더 크게 합치기
+    public int solution89(int a, int b) {
+        int answer = 0;
+
+        String aa = a+""+b;
+        String bb = b+""+a;
+
+        if (Integer.parseInt(aa) > Integer.parseInt(bb)){
+            answer = Integer.parseInt(aa);
+        } else if (Integer.parseInt(aa) < Integer.parseInt(bb)){
+            answer = Integer.parseInt(bb);
+        } else {
+            answer = Integer.parseInt(aa);
+        }
+        return answer;
+    }
+
+    //두 수의 연산값 비교하기
+    public int solution88(int a, int b) {
+        int answer = 0;
+
+        String aa = a+""+b;
+        if (Integer.parseInt(aa) > 2*a*b){
+            answer = Integer.parseInt(aa) ;
+        } else {
+            answer = 2*a*b ;
+        }
+        return answer;
+    }
+
+
+    //홀짝에 따라 다른 값 반환하기
+    public int solution87(int n) {
+        int answer = 0;
+
+
+        //홀수라면
+        if (n % 2 != 0){
+            for (int i = 1; i<=n; i=i+2){
+                answer += i;
+            }
+        } else { //짝수라면
+            for (int i = 0; i <= n; i=i+2) {
+                answer += i*i;
+            }
+        }
+        return answer;
+    }
+
+    //원소들의 곱과 합
+    public int solution86(int[] num_list) {
+        int answer = 0;
+
+        int z = 1;
+        int x = 0;
+
+        for(int i : num_list){
+            z *= i;
+            x += i;
+        }
+        x = x*x;
+        if (x>z){
+            answer = 1;
+        }
+
+        return answer;
+    }
+
+    //이어 붙인 수
+    public int solution85(int[] num_list) {
+        int answer = 0;
+
+        String a = "";
+        String b = "";
+        for (int i = 0; i < num_list.length; i++) {
+
+            if (num_list[i] % 2 == 0){
+                a += String.valueOf(num_list[i]);
+            } else {
+                b += String.valueOf(num_list[i]);
+            }
+        }
+        answer = Integer.parseInt(a) + Integer.parseInt(b);
+        System.out.println(answer);
+        return answer;
     }
 
     //마지막 두 원소
     public int[] solution84(int[] num_list) {
         int[] answer = {};
 
-        answer = new int[num_list.length +1];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = num_list[i];
-            answer[answer.length-1] = 9;
-//            if (num_list[num_list.length - 1] > num_list[num_list.length - 2] ){
-//                answer[i+1] = num_list[num_list.length - 1] * 2;
-//            } else {
-//                answer[i+1] =  (num_list[num_list.length - 2] - num_list[num_list.length - 1]);
-//            }
-            System.out.println(answer[i]);
-
+        int z = 0;
+        answer = new int[num_list.length + 1];
+        if (num_list[num_list.length -1] > num_list[num_list.length -2]){
+            z = num_list[num_list.length -1] - num_list[num_list.length -2];
         }
+        if (num_list[num_list.length -1] <= num_list[num_list.length -2]){
+            z = num_list[num_list.length -1] * 2;
+        }
+
+        for (int i = 0; i < num_list.length; i++) {
+            answer[i] = num_list[i];
+        }
+        answer[num_list.length] = z;
 
 
 
