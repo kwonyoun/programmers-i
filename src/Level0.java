@@ -466,13 +466,83 @@ public class Level0 {
 //        solution91(s);
 
         //안전지대
-        int[][] a = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 1}};
-        solution92(a);
+//        int[][] a = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 1}};
+//        solution92(a);
 
         //잘라서 배열로 저장하기
 //        String a = "123456123456";
 //        int b = 6;
 //        solution93(a,b);
+
+        //인덱스 바꾸기
+//        String s = "I love you";
+//        int a = 3;
+//        int b = 6;
+//        solution94(s, a, b);
+
+        //배열 두 배 만들기
+//        int[] ns = {1,4,3,5,-11};
+//        solution95(ns);
+
+        //피자 나눠 먹기 (2)
+        int n = 10;
+        solution96(n);
+
+
+    }
+
+    //피자 나눠 먹기 (2)
+    public int solution96(int n) {
+        int answer = 0;
+
+        int pizza = 6;
+        int cnt = 1;
+        while (true){
+            if ((pizza*cnt)%n == 0){
+                break;
+            }
+            if ((pizza*cnt)%n != 0){
+                cnt++;
+            }
+        }
+        answer = cnt;
+        System.out.println(cnt);
+        return answer;
+    }
+
+    //배열 두 배 만들기
+    public int[] solution95(int[] numbers) {
+        int[] answer = {};
+
+        answer = new int[numbers.length];
+        for (int i=0; i<numbers.length; i++){
+            answer[i] = numbers[i]*2;
+            System.out.println(answer[i]);
+        }
+
+        return answer;
+    }
+
+
+    //인덱스 바꾸기
+    public String solution94(String my_string, int num1, int num2) {
+        String answer = "";
+
+        char[] arr = my_string.toCharArray();
+
+        arr[num2] = my_string.charAt(num1);
+        arr[num1] = my_string.charAt(num2);
+
+        answer = String.valueOf(arr);
+
+//        String[] sarr = my_string.split("");
+//        String n1 = sarr[num1];
+//        sarr[num1] = sarr[num2];
+//        sarr[num2] = n1;
+//        for (String a:sarr) {
+//            answer += a;
+//        }
+        return answer;
     }
 
     //잘라서 배열로 저장하기
@@ -515,15 +585,19 @@ public class Level0 {
 
     //안전지대
     //못푸어짢아
+    //못풀겠어요,,ㅜ
     public int solution92(int[][] board) {
         int answer = 0;
 
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                System.out.println(board[i][j]);
-            }
+                if (board[i][j] == 1){
 
+                }
+            }
         }
+
         return answer;
     }
 
