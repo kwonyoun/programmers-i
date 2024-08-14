@@ -466,67 +466,64 @@ public class Level0 {
 //        solution91(s);
 
         //안전지대
-//        int[][] a = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 1}};
-//        solution92(a);
+        int[][] a = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 1}};
+        solution92(a);
 
         //잘라서 배열로 저장하기
-        String a = "abc1Addfggg4556b";
-        int b = 6;
-        solution93(a,b);
+//        String a = "123456123456";
+//        int b = 6;
+//        solution93(a,b);
     }
 
     //잘라서 배열로 저장하기
+    //못 풀엇잖아
+    //오,,,
     public String[] solution93(String my_str, int n) {
         String[] answer = {};
 
-        String sa = "";
         if (my_str.length() % n == 0) {
             answer = new String[my_str.length()/n];
         } else {
             answer = new String[my_str.length()/n +1];
         }
-        for (int i = 0; i < my_str.length(); i=i+n) {
-            sa = my_str.substring(i, n);
-            n = n+n;
-            if (my_str.length() < n){
-                sa = my_str.substring(i);
-            }
-            answer[i] = sa;
-//            System.out.println(answer[i]);
-        }
-        String z = my_str.substring(7);
 
-        System.out.println(z);
+        int idx = 0;
+        while (!my_str.isEmpty()) { //my_str이 공백이 아닐 때 까지 진행하기, 결국 my_str을 공백으로 만들어야 한다.
+
+            if (my_str.length() > n) { //나누기위한 길이 비교
+                answer[idx] = my_str.substring(0, n); //0부터 쪼개려는 길이 n까지.
+                my_str = my_str.substring(n);
+                //string.substring(n)은 n부터 끝까지 쪼갠다. 그값을 다시 mystr으로 저장하므로 위에 0시작이 가능한 것이다.
+            } else {
+                //answer[]의 마지막 배열을 저장하기위함. n으로 쪼갠 후 나머지 값들을 저장하고, 남은 값이 없으니 공백으로 재정의한다.
+                answer[idx] = my_str;
+                my_str = "";
+            }
+            System.out.println(answer[idx]);
+            idx++;
+        }
+
+//        int index = 0;
+//        for (int i = 0; i < my_str.length(); i = i + n) {
+//            int end = Math.min(i + n, my_str.length());
+//            answer[index] = my_str.substring(i, end);
+////            System.out.println(answer[index]);
+//            index++;
+//        }
         return answer;
     }
 
     //안전지대
+    //못푸어짢아
     public int solution92(int[][] board) {
         int answer = 0;
 
-
-        int all = 0;
-        int cnt = 0;
-        int first = 0;
-        int end = 0;
         for (int i = 0; i < board.length; i++) {
-//            System.out.println("i "+i);
             for (int j = 0; j < board[i].length; j++) {
-                all++;
-//                System.out.println("j "+j);
-                if (board[i][j] == 1) {
-//                    System.out.println(i+" "+j);
-                    cnt++;
-                    System.out.println(cnt);
-                    if (board[i][0] ==1 || board[i][board[i].length] == 1){
-
-                    }
-
-                }
-
+                System.out.println(board[i][j]);
             }
+
         }
-        answer = all - cnt;
         return answer;
     }
 
