@@ -485,10 +485,31 @@ public class Level0 {
 //        solution95(ns);
 
         //피자 나눠 먹기 (2)
-        int n = 10;
-        solution96(n);
+//        int n = 10;
+//        solution96(n);
+
+        //문자열 잘라서 정렬하기
+        String s = "dxccxbbbxaaaa";
+        solution97(s);
 
 
+    }
+
+    //문자열 잘라서 정렬하기
+    public String[] solution97(String myString) {
+        String[] answer = {};
+
+        answer = myString.split("x");
+        ArrayList<String> li = new ArrayList<>();
+
+        for (String a:answer){
+            if (!a.isEmpty()){
+                li.add(a);
+            }
+        }
+        String[] z = li.toArray(new String[li.size()]);
+        Arrays.sort(z);
+        return z;
     }
 
     //피자 나눠 먹기 (2)
