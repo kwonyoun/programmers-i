@@ -489,13 +489,34 @@ public class Level0 {
 //        solution96(n);
 
         //문자열 잘라서 정렬하기
-        String s = "dxccxbbbxaaaa";
-        solution97(s);
+//        String s = "dxccxbbbxaaaa";
+//        solution97(s);
 
         //외계행성의 나이
-        int i = 23;
-        solution98(i);
+//        int i = 23;
+//        solution98(i);
 
+        //가까운 1 찾기
+        int[] arr = {1, 0, 0, 1, 0, 0};
+        int id = 4;
+        System.out.println(solution99(arr, id));
+
+    }
+
+    //가까운 1 찾기
+    public int solution99(int[] arr, int idx) {
+        int answer = 0;
+
+        for (int i = idx; i < arr.length; i++) {
+            if (arr[i] == 1){
+                answer = i;
+                break;
+            } else {
+                answer = -1;
+            }
+        }
+
+        return answer;
     }
 
     //외계행성의 나이
