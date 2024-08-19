@@ -492,7 +492,21 @@ public class Level0 {
         String s = "dxccxbbbxaaaa";
         solution97(s);
 
+        //외계행성의 나이
+        int i = 23;
+        solution98(i);
 
+    }
+
+    //외계행성의 나이
+    public String solution98(int age) {
+        String answer = "";
+        String as = String.valueOf(age);
+        for (int i = 0; i < as.length(); i++) {
+            answer += (char) (as.charAt(i) + 49);
+        }
+        System.out.println(answer);
+        return answer;
     }
 
     //문자열 잘라서 정렬하기
