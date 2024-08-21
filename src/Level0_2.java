@@ -9,9 +9,62 @@ public class Level0_2 {
 //        System.out.println(solution1(s));
 
         //배열 만들기 3
-        int[] arr = {1,2,3,4,5};
-        int[][] in = {{1, 3}, {0, 4}};
-        solution2(arr, in);
+//        int[] arr = {1,2,3,4,5};
+//        int[][] in = {{1, 3}, {0, 4}};
+//        solution2(arr, in);
+
+        //카운트 업
+//        int s = 3;
+//        int e = 10;
+//        solution3(s,e);
+
+        //정수 찾기
+//        int[] l = {15, 98, 23, 2, 15};
+//        int n = 20;
+//        solution4(l, n);
+
+        //중앙값 구하기
+        int[] a = {1, 2, 7, 10, 11};
+        solution5(a);
+
+    }
+
+    //중앙값 구하기
+    public int solution5(int[] array) {
+        int answer = 0;
+
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            answer = array[array.length/2];
+        }
+        return answer;
+    }
+
+    //정수 찾기
+    public int solution4(int[] num_list, int n) {
+        int answer = 0;
+
+        for (int num:num_list){
+            if (n == num){
+                answer = 1;
+            }
+        }
+        return answer;
+    }
+
+    //카운트 업
+    public int[] solution3(int start_num, int end_num) {
+        int[] answer = {};
+
+        answer = new int[end_num-start_num+1];
+
+        int idx = 0;
+        for (int j = start_num; j <= end_num; j++) {
+            answer[idx] = j;
+            idx++;
+        }
+
+        return answer;
     }
 
 
