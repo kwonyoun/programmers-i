@@ -24,9 +24,25 @@ public class Level0_2 {
 //        solution4(l, n);
 
         //중앙값 구하기
-        int[] a = {1, 2, 7, 10, 11};
-        solution5(a);
+//        int[] a = {1, 2, 7, 10, 11};
+//        solution5(a);
 
+        //중복된 숫자 개수
+        int[] a = {1, 1, 2, 3, 4, 5};
+        int n = 1;
+        solution6(a,n);
+    }
+
+    //중복된 숫자 개수
+    public int solution6(int[] array, int n) {
+        int answer = 0;
+
+        for (int a:array) {
+            if (n == a){
+                answer++;
+            }
+        }
+        return answer;
     }
 
     //중앙값 구하기
