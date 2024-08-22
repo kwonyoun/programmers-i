@@ -28,9 +28,39 @@ public class Level0_2 {
 //        solution5(a);
 
         //중복된 숫자 개수
-        int[] a = {1, 1, 2, 3, 4, 5};
-        int n = 1;
-        solution6(a,n);
+//        int[] a = {1, 1, 2, 3, 4, 5};
+//        int n = 1;
+//        solution6(a,n);
+
+        //배열 회전시키기
+        int[] n = {4, 455, 6, 4, -1, 45, 6};
+        String s = "left";
+        solution7(n,s);
+
+    }
+
+    //배열 회전시키기
+    public int[] solution7(int[] numbers, String direction) {
+        int[] answer = {};
+
+        answer = new int[numbers.length];
+        int idx = 0;
+        if (direction.equals("left")){
+            for (int i = 1; i < numbers.length; i++) {
+                answer[idx] = numbers[i];
+                idx++;
+            }
+            answer[numbers.length-1] = numbers[0];
+        }
+        else {
+            for (int i = 1; i < numbers.length; i++) {
+                answer[i] = numbers[idx];
+                idx++;
+            }
+            answer[0] = numbers[numbers.length-1];
+        }
+
+        return answer;
     }
 
     //중복된 숫자 개수
