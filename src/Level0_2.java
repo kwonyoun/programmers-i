@@ -44,10 +44,32 @@ public class Level0_2 {
 //        solution8(l,r);
 
         //카펫
-        int b = 10;
-        int y = 2;
-        solution9(b,y);
+//        int b = 10;
+//        int y = 2;
+//        solution9(b,y);
 
+        //최솟값 만들기
+        int []a = {1, 4, 2};
+        int []b = {5, 4, 4};
+        solution10(a,b);
+
+    }
+
+    //최솟값 만들기
+    public int solution10(int []A, int []B)
+    {
+        int answer = 0;
+
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int i = 0;
+        int j = B.length-1;
+        while (i<A.length){
+            answer += A[i++] * B[j--];
+        }
+        System.out.println(answer);
+
+        return answer;
     }
 
     //카펫
