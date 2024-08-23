@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Level0_2 {
@@ -33,10 +34,70 @@ public class Level0_2 {
 //        solution6(a,n);
 
         //배열 회전시키기
-        int[] n = {4, 455, 6, 4, -1, 45, 6};
-        String s = "left";
-        solution7(n,s);
+//        int[] n = {4, 455, 6, 4, -1, 45, 6};
+//        String s = "left";
+//        solution7(n,s);
 
+        //배열 만들기 2
+//        int l = 5;
+//        int r = 50;
+//        solution8(l,r);
+
+        //카펫
+        int b = 10;
+        int y = 2;
+        solution9(b,y);
+
+    }
+
+    //카펫
+    //lev2
+    public int[] solution9(int brown, int yellow) {
+        int[] answer = {};
+
+        answer = new int[2];
+        int sum = brown+yellow;
+        for (int i = 1; i <= sum; i++) {
+            if(sum%i==0) { //약수
+
+                int se = sum / i; // 세로의 길이
+                if ((i - 2) * (se - 2) == yellow) {
+                    answer[0] = i;
+                    answer[1] = se;
+                }
+            }
+        }
+        return answer;
+    }
+
+    //배열 만들기 2
+    //다시 풀어야할 듯
+    public int[] solution8(int l, int r) {
+        int[] answer = {};
+
+        String[] na = {"1","2","3","4","6","7","8","9"};
+//        int[] na = {1,2,3,4,6,7,8,9};
+
+        ArrayList<Integer> list = new ArrayList<>();
+        String a = "";
+        for (int i = l; i <= r; i++) {
+            String ss = String.valueOf(i); //사이수들을 String형변환
+            String[] sar = ss.split(""); //값들을 배열로 변환한다.
+            int ll = sar.length; //사잇값들의 각 길이
+
+            int cnt = 0;
+            for (int j = 0; j < ll; j++) {
+                if (sar[j].equals("0") || sar[j].equals("5")){
+                    cnt++;
+                }
+
+            }
+            if(cnt == ll) {
+                list.add(i);
+            }
+
+        }
+        return answer;
     }
 
     //배열 회전시키기
