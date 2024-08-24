@@ -49,10 +49,67 @@ public class Level0_2 {
 //        solution9(b,y);
 
         //최솟값 만들기
-        int []a = {1, 4, 2};
-        int []b = {5, 4, 4};
-        solution10(a,b);
+//        int []a = {1, 4, 2};
+//        int []b = {5, 4, 4};
+//        solution10(a,b);
 
+        //올바른 괄호
+//        String s = "())((())()";
+//        System.out.println(solution11(s));
+
+        //JadenCase 문자열 만들기
+        String s = "3pe    ople unF  ollowed m e";
+        System.out.println(solution12(s));
+
+
+    }
+
+    //JadenCase 문자열 만들기
+    //다시 풀어보기!
+    public String solution12(String s) {
+        String answer = "";
+
+        String[] sarr = s.split(" ");
+        for (int i = 0; i < sarr.length; i++) {
+            String ss = sarr[i];
+            System.out.println("ss : "+ss);
+            if(sarr[i].isEmpty()){
+                answer += " ";
+            }
+            else {
+                answer += ss.substring(0, 1).toUpperCase();
+                answer += ss.substring(1).toLowerCase(); //두번째 글자부터 끝까지 소문자로 변환.
+                answer += " "; //한 문자열이 끝나면 원래 있던 공백을 다시 추가.
+            }
+        }
+        if(s.substring(s.length()-1, s.length()).equals(" ")){
+            return answer;
+        }
+        answer = answer.substring(0, answer.length()-1);
+        return answer;
+    }
+    //올바른 괄호
+    boolean solution11(String s) {
+        boolean answer = true;
+
+        String[] sarr = s.split("");
+        int r = 0;
+        int l = 0;
+        for (int i = 0; i < sarr.length; i++) {
+                if (sarr[i].equals("(")){
+                    r ++;
+                } else if (sarr[i].equals(")")) {
+                    l++;
+                }
+                if (r < l) {
+                    answer = false;
+                }
+        }
+        if (r != l){
+            answer = false;
+        }
+
+        return answer;
     }
 
     //최솟값 만들기
