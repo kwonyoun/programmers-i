@@ -58,10 +58,39 @@ public class Level0_2 {
 //        System.out.println(solution11(s));
 
         //JadenCase 문자열 만들기
-        String s = "3pe    ople unF  ollowed m e";
-        System.out.println(solution12(s));
+//        String s = "3pe    ople unF  ollowed m e";
+//        System.out.println(solution12(s));
+
+        //숫자의 표현
+        int n = 15;
+        System.out.println(solution13(n));
 
 
+    }
+
+    //숫자의 표현
+    public int solution13(int n) {
+        int answer = 0;
+
+        int a = 0;
+        int idx = 0;
+        for (int i = 1; i <= n; i++) {
+            a += i;
+            if (a == n){
+                System.out.println(a);
+                idx++;
+
+            }
+
+        }
+//        while (a<=n){
+//            a += a;
+//            if (a == n){
+//
+//            }
+//          a++;
+//        }
+        return answer;
     }
 
     //JadenCase 문자열 만들기
