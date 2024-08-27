@@ -62,15 +62,59 @@ public class Level0_2 {
 //        System.out.println(solution12(s));
 
         //숫자의 표현
-        int n = 15;
-        System.out.println(solution13(n));
+//        int n = 15;
+//        System.out.println(solution13(n));
+
+        //다음 큰 숫자
+//        int n = 15;
+//        System.out.println(solution14(n));
+
+        //구명보트
+        int[] p = {70, 50, 80, 50};
+        int l = 100;
+        System.out.println(solution15(p, l));
+
 
 
     }
 
+    //구명보트
+    public int solution15(int[] people, int limit) {
+        int answer = 0;
+
+        Arrays.sort(people); //사람 몸무게 정렬하기
+
+        int min=0; //최솟값
+        for (int i = people.length-1; min <= i; i--) { //최댓값부터 최솟값까지.
+            if (people[min] + people[i] <= limit) min++;{ //최솟값과 최댓값의 합이 limit을 넘지않으면, answer증가.
+                // 그리고 다음 다음배열값(두번쨰 최솟값)과 최대값을 비교하기위해 min을 1증가함.
+                answer++; //카운트되는 최소한의 구명보트의 갯수
+            }
+        }
+        return answer;
+    }
+
+    //다음 큰 숫자
+    public int solution14(int n) {
+        int answer = 0;
+
+        int nowCount = Integer.bitCount(n);
+        //Integer.bitCount() 메서드는 2진수 변환 후 1을 카운트한다.
+
+        while (true) {
+            n++;
+            int nextCount = Integer.bitCount(n);
+
+            if (nextCount == nowCount) {
+                break;
+            }
+        }
+        answer = n;
+        return answer;
+    }
+
     //숫자의 표현
     //다아시..
-
     public int solution13(int n) {
         int answer = 0;
 
